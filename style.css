@@ -63,26 +63,92 @@ body {
     border-radius: 3px;
 }
 
+.categoryTopBtn{
+    position: fixed;
+    z-index: 100;
+    right: 20px;
+    bottom: 30px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-Btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg);
+    width: 90%;
+    border-radius: 4px
+}
+
+.dropdown-Btn >div{
+    color: var(--bg-white);
+    padding: 8px 12px;
+    font-size: 18px;
+}
+
+.dropdown-button {
+    background-color: var(--btns);
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.dropdown-button i{
+    color: var(--bg-white);
+    transition: transform 0.3s ease;
+    font-size: 14px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--bg-white);
+    min-width: 170px;
+    box-shadow: var(--box-shadow);
+    z-index: 1;
+    padding: 10px;
+    bottom: 35px;
+    right: 0px;
+}
+
+.dropdown-content label {
+    display: block;
+    padding: 8px 0;
+    cursor: pointer;
+    color: var(--bg);
+    border-radius: 2px;
+}
+
+.dropdown-content label:hover {
+    background-color: var(--back-ground);
+}
+
+.dropdown-content input[type="checkbox"] {
+    margin-right: 10px;
+}
+
 .shop {
     display: grid;
-    grid-template-columns: repeat(5, 260px);
+    grid-template-columns: repeat(4, 260px);
     gap: 50px;
     justify-content: center;
 }
 
 @media (max-width: 1550px) {
     .shop {
-        grid-template-columns: repeat(4, 260px);
-    }
-}
-
-@media (max-width: 1050px) {
-    .shop {
         grid-template-columns: repeat(3, 260px);
     }
 }
 
-@media (max-width: 785px) {
+@media (max-width: 1050px) {
     .shop {
         grid-template-columns: repeat(2, 260px);
     }
@@ -235,7 +301,7 @@ button {
 
 .shopping-cart {
     display: grid;
-    grid-template-columns: repeat(1, 320px);
+    grid-template-columns: repeat(1, 260px);
     justify-content: center;
     gap: 30px;
 }
@@ -255,7 +321,7 @@ button {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .title-price {
@@ -269,14 +335,16 @@ button {
     color: var(--bg-white);
     border-radius: 4px;
     padding: 3px 6px;
-    font-size: 18px !important;
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-style: oblique;
 }
 
 .cartItemBottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .cartItemBottom i {

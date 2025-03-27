@@ -24,16 +24,19 @@ let generateCartItems = () => {
                         <div class="details">
 
                             <div class="title-price-x">
-                                <h4>${search.title}</h4>
                                 <div class="title-price">
-                                    <p class="cart-item-price">$ ${search.price}</p>
+                                    <div class="cart-item-price">$ ${search.price}</div>
                                 </div>
+                                <h4>${search.title}</h4>
+                                <p>${search.description}</p>
                             </div>
-
                             <div class="buttons">
                                 <button onclick="decrement(${id})"><i class="fa-solid fa-minus"></i></button>
                                 <div id=${id} class="quantity">${item}</div>
                                 <button onclick="increment(${id})"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                            <div class="rating">
+                                <p><i class="bi bi-star-fill"></i> ${search.rating.rate}</p>
                             </div>
 
                             <div class="cartItemBottom">
@@ -50,7 +53,24 @@ let generateCartItems = () => {
             <a href="index.html" class="home-btn finalBtn">Back to home</a>
             `
     }
-    TotalAmount(); 
+    TotalAmount();
+
+    addReadMoreFunctionality()
+}
+
+function addReadMoreFunctionality() {
+    document.querySelectorAll('.details p').forEach(p => {
+        const readMoreLink = document.createElement('a');
+        readMoreLink.classList.add('read-more-link');
+        readMoreLink.textContent = 'Read More';
+        p.insertAdjacentElement('afterend', readMoreLink);
+
+        readMoreLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            p.classList.toggle('expanded');
+            this.textContent = p.classList.contains('expanded') ? 'Read Less' : 'Read More';
+        });
+    });
 }
 
 let increment = (id) => {
