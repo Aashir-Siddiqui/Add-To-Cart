@@ -37,6 +37,20 @@ body {
     color: var(--text);
 }
 
+#search-input{
+    font-size: 18px;
+    border: none;
+    background-color: var(--back-ground);
+    color: var(--bg);
+    padding: 4px;
+    border-radius: 4px;
+    outline: none;
+}
+
+#search-input:focus{
+    border: 1px solid var(--btns-two);
+}
+
 .cart {
     position: relative;
     background-color: var(--text);
@@ -115,8 +129,8 @@ body {
     box-shadow: var(--box-shadow);
     z-index: 1;
     padding: 10px;
-    bottom: 35px;
-    right: 0px;
+    bottom: 39px;
+    right: 3px;
 }
 
 .dropdown-content label {
@@ -162,6 +176,9 @@ body {
     .shop {
         grid-template-columns: repeat(1, 260px);
     }
+}
+.nav h1{
+    display: none;
 }
 
 .items {
